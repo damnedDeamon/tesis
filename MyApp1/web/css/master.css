@@ -1,0 +1,92 @@
+
+/*modificando el cuerpo del codigo*/
+body{
+    margin: 0;/*Quitamos el Margin*/
+    padding: 0;/*Quitamos el Padding*/
+    background: url(../img/img_fondo.jpeg) no-repeat center top; /*URL de la imagen de fondo y centramos la imagen*/
+    background-size: cover;/*ajustamos la imagen al fondo*/
+    font-family: sans-serif;/*cambiar el estilo de la fuente*/
+    height: 100vh;/*tamaño de imagen de lo alto del dispositivo*/
+    
+}
+/*Ahora modificamos el div(class="login")*/
+.login {
+    width: 320px;
+    height: 420px;
+    background: black; /*damos un tamaño y color*/
+    color: #fff; /*Color de la letra*/
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);/*Centrar el div*/
+    box-sizing: border-box;
+    padding: 70px 30px;
+    
+}
+/*Ahora modificamos la imagen q esta dentro del div*/
+.login .avatar{
+    width: 100px;
+    height: 100px;/*Tamaño de la imagen*/
+    border-radius: 50%; /*comvertimos en un circulo*/
+    position: absolute;/*ubicar adelante*/
+    top: -50px;
+    left: calc(50% - 50px);/*centramos arriba del div*/
+}
+
+.login h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px
+}
+
+
+.login label{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+    
+}
+
+.login input{
+    width: 100%;
+    margin-bottom: 20px;
+    
+}
+
+.login input[type="text"],
+.login input[type="password"]{
+    border: none;
+    border-bottom: 2px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    
+}
+
+.login input[type="submit"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #b80f22;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    
+}
+
+.login a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgray;
+    
+}
+
+.login a:hover{
+    color: #fff;
+    
+}
