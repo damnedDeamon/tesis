@@ -169,6 +169,5 @@
 
         <br>
         <a href="menuCliente.jsp">volver</a><br>
-        <a href="#">prueba 1</a>
     </body>
 </html>
