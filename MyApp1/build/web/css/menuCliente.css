@@ -1,0 +1,47 @@
+body{
+    margin: 0;/*Quitamos el Margin*/
+    padding: 0;/*Quitamos el Padding*/
+    background: url(../img/perrito.jpg) no-repeat center top; /*URL de la imagen de fondo y centramos la imagen*/
+    background-size: cover;/*ajustamos la imagen al fondo*/
+    font-family: sans-serif;/*cambiar el estilo de la fuente*/
+    height: 100vh;/*tamaño de imagen de lo alto del dispositivo*/
+    
+}
+table, th, td {
+    border: 2px solid #fff;
+}
+
+td, th {
+    padding: 10px;
+}
+th {
+    text-align: left;
+}
+
+.tabla {
+    color: #fff; /*Color de la letra*/
+    top: 35%;
+    left: 35%;
+    position: absolute;
+    transform: translate(-50%, -50%);/*Centrar el div*/
+    box-sizing: border-box;
+    padding: 80px 30px;
+    
+}
+h1{
+    top: 5%;
+    left: 24%;
+    position: absolute;
+}
+
+h3{
+    top: 15%;
+    left: 23%;
+    position: absolute;
+}
+
+.cerrar{
+    top: 5%;
+    left: 90%;
+    position: absolute;
+}

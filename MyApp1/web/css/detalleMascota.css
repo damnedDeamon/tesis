@@ -1,0 +1,9 @@
+body{
+    margin: 0;/*Quitamos el Margin*/
+    padding: 0;/*Quitamos el Padding*/
+    background: url(../img/conejo.jpg) no-repeat center top; /*URL de la imagen de fondo y centramos la imagen*/
+    background-size: cover;/*ajustamos la imagen al fondo*/
+    font-family: sans-serif;/*cambiar el estilo de la fuente*/
+    height: 100vh;/*tamaño de imagen de lo alto del dispositivo*/
+    
+}
