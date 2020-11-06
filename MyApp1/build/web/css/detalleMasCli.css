@@ -1,9 +1,125 @@
-body{
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-weight: 100;
     margin: 0;/*Quitamos el Margin*/
     padding: 0;/*Quitamos el Padding*/
     background: url(../img/zorro.jpg) no-repeat center top; /*URL de la imagen de fondo y centramos la imagen*/
     background-size: cover;/*ajustamos la imagen al fondo*/
     font-family: sans-serif;/*cambiar el estilo de la fuente*/
     height: 100vh;/*tamaño de imagen de lo alto del dispositivo*/
-    
+}
+
+.container {
+    position: absolute;
+    top: 35%;
+    left: 32%;
+    transform: translate(-50%, -50%);
+}
+
+table {
+    width: 800px;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+th,
+td {
+    padding: 15px;
+    background-color: rgba(255,255,255,0.2);
+    color: black;
+    color: white; text-shadow: black 0.3em 0.1em 0.2em;
+}
+
+th {
+    text-align: left;
+}
+
+thead {
+    th {
+        background-color: #55608f;
+    }
+}
+
+tbody {
+    tr {
+        &:hover {
+            background-color: rgba(255,255,255,0.3);
+        }
+    }
+    td {
+        position: relative;
+        &:hover {
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: -9999px;
+                bottom: -9999px;
+                background-color: rgba(255,255,255,0.2);
+                z-index: -1;
+            }
+        }
+    }
+}
+
+h1{
+    top: 5%;
+    left: 24%;
+    position: absolute;
+    color: #fff;
+    font-family: "Latin Modern Roman 10";
+    font-style: oblique;
+    color: white; text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+h3{
+    top: 15%;
+    left: 23%;
+    position: absolute;
+    color: #fff;
+    font-family: "Latin Modern Roman 10";
+    font-style: oblique;
+    color: white; text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+
+.cerrar{
+    top: 5%;
+    left: 90%;
+    position: absolute;
+}
+
+
+
+/*boton */
+.button {
+  background-color: #4CAF50; /* Green */
+  border-radius: 8px;
+  color: white;
+  padding: 10px 19px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 2px 1px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  
+}
+
+.button5 {
+  background-color: #4CAF50;
+  color: black;
+  border: 2px solid #555555;
+}
+
+.button5:hover {
+  background-color: #f44336;
+  color: white;
 }

@@ -7,11 +7,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/menuCliente.css">
+        <link rel="stylesheet" href="css/prueba.css">
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Menu Cliente</h1>
+        <h1>Menu Paciente</h1>
 
         <h3>Bienvenid@ <%= c.getNombre()%></h3>
         <br>
@@ -22,45 +22,37 @@
 
             for (ClienteAndMascota cm : dc.readMascotaCliente(c.getId())) {%> 
 
-        <div class="tabla">
-            <table style="width: 70%">
-                <tr>
-                    <th>
-                        Nombre Mascota
-                    </th>
-                    <th>
-                        Fecha de nacimiento
-                    </th>
-                    <th>
-                        Edad
-                    </th>
-                    <th>
-                        Peso
-                    </th>
-                    <th>
-                        Mascota
-                    </th>
-                    <th>
-                        Raza
-                    </th>
-                    <th>
-                        Atencion
-                    </th>
-                </tr>
-                <tr>
-                    <td><%= cm.getNombreMascota()%></td>
-                    <td><%= cm.getFechaNacimiento()%></td>
-                    <td><%= cm.getEdad()%></td>
-                    <td><%= cm.getPeso()%></td>
-                    <td><%= cm.getTipoMascota()%></td>
-                    <td><%= cm.getRaza()%></td>
-                    <td>
-                        <form action="detalleMascotaCliente.jsp" method="post">
-                            <input type="hidden" name="idMascota" value="<%= cm.getId()%>"/>
-                            <input type="submit" value="Ver detalles">
-                        </form>
-                    </td>
-                </tr>
+        <div class="container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre Mascota</th>
+                        <th>Fecha de nacimiento</th>
+                        <th>Edad</th>
+                        <th>Peso</th>
+                        <th>Mascota</th>
+                        <th>Raza</th>
+                        <th>Atencion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><%= cm.getNombreMascota()%></td>
+                        <td><%= cm.getFechaNacimiento()%></td>
+                        <td><%= cm.getEdad()%></td>
+                        <td><%= cm.getPeso()%></td>
+                        <td><%= cm.getTipoMascota()%></td>
+                        <td><%= cm.getRaza()%></td>
+                        <td>
+                            <form action="detalleMascotaCliente.jsp" method="post">
+                                <input type="hidden" name="idMascota" value="<%= cm.getId()%>"/>
+                                <input type="submit" class="button button5" value="Ver detalles">
+                                
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+
             </table>
         </div>
         <%}%>

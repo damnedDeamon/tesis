@@ -3,17 +3,6 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
-import javax.mail.Transport;
-import javax.mail.internet.MimeMultipart;
-import javax.activation.FileDataSource;
-import javax.activation.DataHandler;
-import javax.mail.internet.MimeBodyPart;
-import javax.mail.BodyPart;
-import javax.mail.internet.InternetAddress;
-import javax.mail.Message;
-import javax.mail.internet.MimeMessage;
-import javax.mail.Session;
-import java.util.Properties;
 
 public final class intento1_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -53,102 +42,66 @@ public final class intento1_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
       out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("<link rel=\"stylesheet\" href=\"css/bootstrap.min.css\">\n");
+      out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("        <link rel=\"stylesheet\" href=\"css/prueba.css\">\n");
+      out.write("\n");
       out.write("        <title>JSP Page</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("        ");
-
-            if (request.getParameter("btok") != null) {
-                
-                String remitente = request.getParameter("Corigen");
-                String clave = request.getParameter("Pass");
-                String destino = request.getParameter("Cdestino");
-                String asunto = request.getParameter("Casunto");
-                String cuerpo = request.getParameter("ta_cuerpo");
-
-                Properties props = new Properties();
-                props.put("mail.smtp.host", "smtp.gmail.com");
-                props.put("mail.smtp.port", "587");
-                props.put("mail.smtp.auth", "true");
-                props.put("mail.smtp.starttls.enable", "true");
-                props.put("mail.smtp.user", remitente);
-                props.put("mail.smtp.clave", clave);
-
-                javax.mail.Session s = javax.mail.Session.getDefaultInstance(props);
-                MimeMessage mensaje = new MimeMessage(s);
-
-                try {
-                    mensaje.addRecipient(Message.RecipientType.TO, new InternetAddress(destino));
-                    mensaje.setSubject(asunto);
-
-                    mensaje.setText(cuerpo);
-                    /*Envio Mensaje de texto*/
-                    BodyPart parteTexto = new MimeBodyPart();                    
-                    parteTexto.setContent("<b>"+cuerpo+"</b>", "text/html");
-
-                    BodyPart parteArchivo = new MimeBodyPart();
-                    parteArchivo.setDataHandler(new DataHandler(new FileDataSource( application.getRealPath("")+ "grafica1.jpg" )));
-                    parteArchivo.setFileName("grafica1.jpg");
-
-                    MimeMultipart todaslasPartes = new MimeMultipart();
-                    todaslasPartes.addBodyPart(parteTexto);
-                    todaslasPartes.addBodyPart(parteArchivo);
-
-                    mensaje.setContent(todaslasPartes);
-
-                    Transport transport = s.getTransport("smtp");
-                    transport.connect("smtp.gmail.com", remitente, clave);
-                    transport.sendMessage(mensaje, mensaje.getAllRecipients());
-                    transport.close();
-                    System.out.println("Correo Enviado");
-                    out.print("<script> alert('Correo Enviado Exitosamente')</script>");
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-            }
-
-        
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("    <center> \n");
-      out.write("        <br>\n");
-      out.write("        <h1>Enviar Correo</h1>\n");
-      out.write("        <form action=\"index.jsp\" method=\"POST\">\n");
-      out.write("            <label for=\"fname\">Correo Origen Gmail:</label><br>\n");
-      out.write("            <input type=\"text\" id=\"fname\" size=\"50\" name=\"Corigen\" value=\"\" Placeholder=\"Correo Origen\"><br>\n");
-      out.write("            <label for=\"lname\">Contraseña Gmail</label><br>\n");
-      out.write("            <input type=\"password\" id=\"lname\" size=\"50\" name=\"Pass\" value=\"\" Placeholder=\"Password\"><br><br><br>\n");
-      out.write("            \n");
-      out.write("            \n");
-      out.write("            <label for=\"lname\">Correo Destino:</label><br>\n");
-      out.write("            <input type=\"text\" id=\"lname\" size=\"50\" name=\"Cdestino\" value=\"\" Placeholder=\"Correo Destino\"><br>\n");
-      out.write("            <label for=\"lasunto\">Asunto del correo:</label><br>\n");
-      out.write("            <input type=\"text\" id=\"lasunto\" size=\"50\" name=\"Casunto\" value=\"\" Placeholder=\"Asunto a tratar\"><br>\n");
-      out.write("            <label for=\"lname\">Texto:</label><br>\n");
-      out.write("            <textarea name=\"ta_cuerpo\" rows=\"4\" cols=\"40\" Placeholder=\"Texto a Enviar\"></textarea><br><br>\n");
-      out.write("            <input type=\"submit\" name=\"btok\" value=\"Enviar Correo\">\n");
-      out.write("        </form> \n");
-      out.write("    </center> \n");
-      out.write("</body>\n");
+      out.write("        <div class=\"container\">\n");
+      out.write("\t<table>\n");
+      out.write("\t\t<thead>\n");
+      out.write("\t\t\t<tr>\n");
+      out.write("\t\t\t\t<th>Column 1</th>\n");
+      out.write("\t\t\t\t<th>Column 2</th>\n");
+      out.write("\t\t\t\t<th>Column 3</th>\n");
+      out.write("\t\t\t\t<th>Column 4</th>\n");
+      out.write("\t\t\t\t<th>Column 5</th>\n");
+      out.write("\t\t\t</tr>\n");
+      out.write("\t\t</thead>\n");
+      out.write("\t\t<tbody>\n");
+      out.write("\t\t\t<tr>\n");
+      out.write("\t\t\t\t<td>Cell 1</td>\n");
+      out.write("\t\t\t\t<td>Cell 2</td>\n");
+      out.write("\t\t\t\t<td>Cell 3</td>\n");
+      out.write("\t\t\t\t<td>Cell 4</td>\n");
+      out.write("\t\t\t\t<td>Cell 5</td>\n");
+      out.write("\t\t\t</tr>\n");
+      out.write("\t\t\t<tr>\n");
+      out.write("\t\t\t\t<td>Cell 1</td>\n");
+      out.write("\t\t\t\t<td>Cell 2</td>\n");
+      out.write("\t\t\t\t<td>Cell 3</td>\n");
+      out.write("\t\t\t\t<td>Cell 4</td>\n");
+      out.write("\t\t\t\t<td>Cell 5</td>\n");
+      out.write("\t\t\t</tr>\n");
+      out.write("\t\t\t<tr>\n");
+      out.write("\t\t\t\t<td>Cell 1</td>\n");
+      out.write("\t\t\t\t<td>Cell 2</td>\n");
+      out.write("\t\t\t\t<td>Cell 3</td>\n");
+      out.write("\t\t\t\t<td>Cell 4</td>\n");
+      out.write("\t\t\t\t<td>Cell 5</td>\n");
+      out.write("\t\t\t</tr>\n");
+      out.write("\t\t\t<tr>\n");
+      out.write("\t\t\t\t<td>Cell 1</td>\n");
+      out.write("\t\t\t\t<td>Cell 2</td>\n");
+      out.write("\t\t\t\t<td>Cell 3</td>\n");
+      out.write("\t\t\t\t<td>Cell 4</td>\n");
+      out.write("\t\t\t\t<td>Cell 5</td>\n");
+      out.write("\t\t\t</tr>\n");
+      out.write("\t\t\t<tr>\n");
+      out.write("\t\t\t\t<td>Cell 1</td>\n");
+      out.write("\t\t\t\t<td>Cell 2</td>\n");
+      out.write("\t\t\t\t<td>Cell 3</td>\n");
+      out.write("\t\t\t\t<td>Cell 4</td>\n");
+      out.write("\t\t\t\t<td>Cell 5</td>\n");
+      out.write("\t\t\t</tr>\n");
+      out.write("\t\t</tbody>\n");
+      out.write("\t</table>\n");
+      out.write("</div>\n");
+      out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

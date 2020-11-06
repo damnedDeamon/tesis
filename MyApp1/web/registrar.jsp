@@ -14,7 +14,7 @@
                 <form name="entrada" action="crearVeterinario.do" method="POST">
                     <table>
                         <tr>
-                            <th height="20px" width="100px">
+                            <th height="20px" width="100px" class="nombre">
                                 Nombre
                             </th>
                             <th>

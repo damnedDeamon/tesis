@@ -7,7 +7,7 @@
     </head>
     <title>Veterinaria</title>
     <link rel="stylesheet" href="css/master.css">
-    
+
     <script>
         function crearVeterinario() {
             var validacion = prompt("Ingrese codigo");
@@ -33,8 +33,8 @@
             </form>
         </div>
 
-        <% %>
-        
-        
+        <%%>
+
+
     </body>
 </html>

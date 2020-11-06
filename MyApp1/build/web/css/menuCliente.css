@@ -9,6 +9,7 @@ body{
 }
 table, th, td {
     border: 2px solid #fff;
+    
 }
 
 td, th {
@@ -16,28 +17,17 @@ td, th {
 }
 th {
     text-align: left;
+    
 }
 
 .tabla {
     color: #fff; /*Color de la letra*/
-    top: 35%;
+    top: 38%;
     left: 35%;
     position: absolute;
     transform: translate(-50%, -50%);/*Centrar el div*/
     box-sizing: border-box;
-    padding: 80px 30px;
     
-}
-h1{
-    top: 5%;
-    left: 24%;
-    position: absolute;
-}
-
-h3{
-    top: 15%;
-    left: 23%;
-    position: absolute;
 }
 
 .cerrar{
