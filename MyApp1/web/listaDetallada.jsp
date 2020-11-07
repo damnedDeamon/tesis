@@ -18,6 +18,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/fecha.css">
         <link rel="stylesheet" href="css/detalleMascota.css">
+        
         <script src="js/jquery-3.3.1.min.js"></script>
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minium-scale=1.0">
 
@@ -25,6 +26,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+        
 
         <br>
         <h1>Horarios del paciente</h1>

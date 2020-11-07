@@ -8,9 +8,23 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/prueba.css">
+        <link rel="stylesheet" href="css/barraMenu.css">
         <title>JSP Page</title>
     </head>
     <body>
+        <header>
+            <section>
+                <nav>
+                    <ul>
+                        <li><a href="#"><i class="home"></i>Home</a></li>
+                        <li><a href="#"><i class="Contacto"></i>Contacto</a></li>
+                        <li><a href="#"><i class="informacion"></i>informacion</a></li>
+                        <li><a href="#"><i class="fotos"></i>fotos</a></li>
+                        <li><a href="index.jsp"><i class="cerrar-sesion"></i>cerrar sesion</a></li>
+                    </ul>
+                </nav>
+            </section>
+        </header>
         <h1>Menu Paciente</h1>
 
         <h3>Bienvenid@ <%= c.getNombre()%></h3>
@@ -56,7 +70,6 @@
             </table>
         </div>
         <%}%>
-        <a class="cerrar" href="index.jsp">Cerrar sesión</a><br>
 
     </body>
 </html>

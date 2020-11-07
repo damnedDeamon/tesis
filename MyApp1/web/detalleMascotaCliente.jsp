@@ -14,10 +14,26 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/fecha.css">
         <link rel="stylesheet" href="css/prueba.css">
+        <link rel="stylesheet" href="css/barraMenu.css">
         <title>JSP Page</title>
     </head>
     <body>
+        <header>
+            <section>
+                <nav>
+                    <ul>
+                        <li><a href="#"><i class="home"></i>Home</a></li>
+                        <li><a href="#"><i class="Contacto"></i>Contacto</a></li>
+                        <li><a href="#"><i class="informacion"></i>informacion</a></li>
+                        <li><a href="#"><i class="fotos"></i>fotos</a></li>
+                        <li><a href="index.jsp"><i class="cerrar-sesion"></i> cerrar sesion </a></li>
+                        <li><a href="menuCliente.jsp"><i class="volver"></i> volver </a></li>
+                    </ul>
+                </nav>
+            </section>
+        </header>
         <br>
         <h1>Horarios del paciente</h1>
         <div class="container">
@@ -135,17 +151,16 @@
                         <td>
                             <form action="#" method="post">
                                 <input type="hidden" name="idAtencion" value="<%=a.getId()%>"/>
-                                <input type="submit" value="?" name="btnFechaAtencion">
+                                <input type="submit" value="✓" name="btnFechaAtencion">
                             </form>
                         </td>
                     </tr>
                     <%}%>
-
                 </tbody>
             </table>
 
         </div>
         <br>
-        <a class="cerrar" href="menuCliente.jsp">volver</a><br>
+        
     </body>
 </html>

@@ -69,7 +69,7 @@ tbody {
 }
 
 h1{
-    top: 5%;
+    top: 10%;
     left: 24%;
     position: absolute;
     color: #fff;
@@ -79,8 +79,8 @@ h1{
 }
 
 h3{
-    top: 15%;
-    left: 23%;
+    top: 17%;
+    left: 24%;
     position: absolute;
     color: #fff;
     font-family: "Latin Modern Roman 10";
