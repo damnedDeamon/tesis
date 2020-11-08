@@ -19,7 +19,7 @@
         <link rel="stylesheet" href="css/barraMenu.css">
         <title>JSP Page</title>
     </head>
-    <body>
+    <body class="cuerpoDetalle">
         <header>
             <section>
                 <nav>

@@ -7,11 +7,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/prueba.css">
         <link rel="stylesheet" href="css/barraMenu.css">
+        <link rel="stylesheet" href="css/prueba.css">
         <title>JSP Page</title>
     </head>
-    <body>
+    <body class="cuerpoDetalle">
         <header>
             <section>
                 <nav>
@@ -31,10 +31,7 @@
         <br>
 
 
-        <%
-            DAO_Cliente dc = new DAO_Cliente();
-
-            for (ClienteAndMascota cm : dc.readMascotaCliente(c.getId())) {%> 
+       
 
         <div class="container">
             <table>
@@ -50,6 +47,8 @@
                     </tr>
                 </thead>
                 <tbody>
+                     <%DAO_Cliente dc = new DAO_Cliente();
+                          for (ClienteAndMascota cm : dc.readMascotaCliente(c.getId())) {%> 
                     <tr>
                         <td><%= cm.getNombreMascota()%></td>
                         <td><%= cm.getFechaNacimiento()%></td>
@@ -65,11 +64,11 @@
                             </form>
                         </td>
                     </tr>
+                    <%}%>
                 </tbody>
-
             </table>
         </div>
-        <%}%>
+        
 
     </body>
 </html>

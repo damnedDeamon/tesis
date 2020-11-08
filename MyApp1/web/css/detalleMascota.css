@@ -1,9 +1,161 @@
-body{
+html,
+.cuerpoLista {
+    height: 100%;
+}
+
+.cuerpoLista {
+    font-weight: 100;
     margin: 0;/*Quitamos el Margin*/
     padding: 0;/*Quitamos el Padding*/
-    background: url(../img/conejo.jpg) no-repeat center top; /*URL de la imagen de fondo y centramos la imagen*/
+    background: url(../img/lobo_1.jpg) no-repeat center top; /*URL de la imagen de fondo y centramos la imagen*/
     background-size: cover;/*ajustamos la imagen al fondo*/
     font-family: sans-serif;/*cambiar el estilo de la fuente*/
     height: 100vh;/*tamaño de imagen de lo alto del dispositivo*/
-    
+}
+
+.container {
+    position: absolute;
+    top: 30%;
+    left: 60%;
+    transform: translate(-70%, -50%);
+}
+
+
+table {
+    width: 800px;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+th,
+td {
+    padding: 15px;
+    background-color: rgba(255,255,255,0.2);
+    color: black;
+    color: black; text-shadow: red 0.3em 0.1em 0.2em;
+}
+
+th {
+    text-align: left;
+}
+
+thead {
+    th {
+        background-color: #55608f;
+    }
+}
+
+tbody {
+    tr {
+        &:hover {
+            background-color: rgba(0,0,255,0.3);
+        }
+    }
+    td {
+        position: relative;
+        &:hover {
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: -9999px;
+                bottom: -9999px;
+                background-color: rgba(255,255,255,0.2);
+                z-index: -1;
+            }
+        }
+    }
+}
+
+.titulo{
+    top: 5%;
+    left: 40%;
+    position: absolute;
+    color: darkblue;
+    font-family: "Latin Modern Roman 10";
+    font-style: oblique;
+    color: black; text-shadow: red 0.1em 0.1em 0.2em;
+}
+
+.subTitulo{
+    top: 15%;
+    left: 41%;
+    position: absolute;
+    color: darkblue;
+    font-family: "Latin Modern Roman 10";
+    font-style: oblique;
+    color: black; text-shadow: red 0.1em 0.1em 0.2em;
+}
+
+
+.cerrar{
+    top: 5%;
+    left: 90%;
+    position: absolute;
+}
+
+
+
+/*boton */
+.button {
+    background-color: #55608f;
+    border-radius: 8px;
+    color: white;
+    padding: 10px 19px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 2px 1px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+}
+
+.button5 {
+    background-color: black;
+    color: white;
+    border: 2px solid #555555;
+}
+
+.button5:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+a{
+    background-color: #55608f;
+    border-radius: 8px;
+    color: white;
+    padding: 10px 19px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 2px 1px;
+    transition-duration: 0.4s;
+    cursor: pointer; 
+}
+
+.volver{
+    background-color: black;
+    color: white;
+    border: 2px solid #555555;
+    position: absolute;
+    top: 8%;
+    left: 1%;
+    transform: translate(-10%, -50%);
+
+}
+
+.agregarMascota{
+    background-color: black;
+    color: white;
+    border: 2px solid #555555;
+    position: absolute;
+    top: 8%;
+    left: 10%;
+    transform: translate(-10%, -50%);
 }

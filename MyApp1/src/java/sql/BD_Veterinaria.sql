@@ -203,6 +203,8 @@ insert into raza values(null,'Van Turco',2);
 
 -- Mascota --
 insert into mascota values(null,'Odie','2019-05-01','1','16.9',1,'1','1','1'); -- 1 = Macho 2 = Hembra
+insert into mascota values(null,'Thanos','2019-05-01','1','25.1',1,'1','1','1');
+insert into mascota values(null,'cachupin','2019-05-01','1','25.1',1,'1','1','1');
 -- Mascota --
 
 -- Tipo atencion --
