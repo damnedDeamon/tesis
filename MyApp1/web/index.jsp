@@ -22,8 +22,8 @@
 
     <body>
         <div class="login">
-            <img class="avatar" src="img/img_logo.png" alt="fondo">  
-            <h1>Ingresar</h1>
+            <img class="avatar" src="img/logo1.jpeg" alt="fondo">  
+            <h1>hairy legs veterinary</h1>
             <form action="iniciarSesion.do" method="post">
                 <label for="clave">Rut </label>
                 <input type="password" placeholder="Ingrese su Rut" required="" name="rut">

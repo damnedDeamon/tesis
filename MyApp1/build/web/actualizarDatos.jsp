@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
-    
+
     <script>
         $(function () {
             $("#fecha").datepicker();
@@ -46,7 +46,7 @@
             $("#fecha").datepicker();
         });
     </script>
-    <body>
+    <body class="cuerpoActualizar">
 
         <%
             String id;
@@ -60,107 +60,95 @@
 
         <form name="entrada" action="actualizarDato.do" method="POST">  
 
-            <div id="basIn">
 
-                <h1>Actualizar Datos</h1><br>
+            <h1 class="titulo" >Actualizar Datos</h1><br>
+            <div class="container">
                 <table>
-                    <tr>
-                        <th height="20px" width="100px">
-                            Nombre
-                        </th>
-                        <th>
-                            <input class="txt1"  type="text" name="txtNombreMascota" value="<%= m.getNombreMacota()%>" />
-                        </th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th class="nombre"><input class="txt1"  type="text" name="txtNombreMascota" value="<%= m.getNombreMacota()%>" /></th>
+                        </tr>
+                    </thead>
                 </table>
                 <table>
-                    <tr>
-                        <th height="20px" width="100px">
-                            Fecha
-                        </th>
-                        <th>
-                            <input class="txt1" id="fecha" type="text" name="txtFecha" value="<%= m.getFechaNacimiento()%>" />
-                        </th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th class="fecha"><input class="txt1" id="fecha" type="text" name="txtFecha" value="<%= m.getFechaNacimiento()%>" /></th>
+                        </tr>
+                    </thead>
                 </table>
                 <table>
-                    <tr>
-                        <th height="20px" width="100px">
-                            Edad
-                        </th>
-                        <th>
-                            <input class="txt1"  type="text" name="txtEdad" value="<%= m.getEdad()%>" />
-                        </th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Edad</th>
+                            <th class="edad"><input class="txt1"  type="text" name="txtEdad" value="<%= m.getEdad()%>" /></th>
+                        </tr>
+                    </thead>
                 </table>
                 <table>
-                    <tr>
-                        <th height="20px" width="100px">
-                            Peso
-                        </th>
-                        <th>
-                            <input class="txt1"  type="text" name="txtPeso" value="<%= m.getPeso()%>" />
-                        </th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Peso</th>
+                            <th class="peso"><input class="txt1"  type="text" name="txtPeso" value="<%= m.getPeso()%>" /></th>
+                        </tr>
+                    </thead>
                 </table>
                 <table>
-                    <tr>
-                        <th height="20px" width="100px">
-                            Sexo
-                        </th>
-                        <th>
-                            <%
-                                String sexo = m.getSexo();
-                                int sexo2 = Integer.parseInt(sexo);
-                                if (sexo2 == 1) {
-                            %>  <input type="radio"  name="cboSexo" value="1" checked>Macho
-                            <input type="radio"  name="cboSexo" value="2">Hembra<br><br><%
-                            } else {
-                            %>  <input type="radio"  name="cboSexo" value="1">Macho  
-                            <input type="radio"  name="cboSexo" value="2" checked>Hembra<br><br><%
-                                }%>
-                        </th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Sexo</th>
+                            <th class="sexo">
+                                <%
+                                    String sexo = m.getSexo();
+                                    int sexo2 = Integer.parseInt(sexo);
+                                    if (sexo2 == 1) {
+                                %>  <input type="radio"  name="cboSexo" value="1" checked>Macho
+                                <input type="radio"  name="cboSexo" value="2">Hembra<br><br><%
+                                } else {
+                                %>  <input type="radio"  name="cboSexo" value="1">Macho  
+                                <input type="radio"  name="cboSexo" value="2" checked>Hembra<br><br><%
+                                    }%>
+                            </th>
+                        </tr>
+                    </thead>
                 </table>
                 <table>
-                    <%
-                        DAO_Raza dr = new DAO_Raza();
-                        DAO_TipoMascota dt = new DAO_TipoMascota();
+                    <thead>
+                        <%
+                            DAO_Raza dr = new DAO_Raza();
+                            DAO_TipoMascota dt = new DAO_TipoMascota();
 
-                        for (TipoMascota t : dt.readId(m.getTipoAnimalAFK())) {
-                    %>
-                    <tr>
-                        <th height="20px" width="100px">
-                            Animal
-                        </th>
-                        <th>
-                            <input class="txt1"  type="text" name="txtAnimal" value="<%= t.getTipoMascota()%>" />
-                        </th>
-                    </tr>
+                            for (TipoMascota t : dt.readId(m.getTipoAnimalAFK())) {
+                        %>
+                        <tr>
+                            <th>Animal</th>
+                            <th class="animal"><input class="txt1"  type="text" name="txtAnimal" value="<%= t.getTipoMascota()%>" /></th>
+                        </tr>
+                    </thead>
                 </table>        
                 <table>
-                    <%
-                        for (Raza r : dr.readId(m.getTipoAnimalAFK(), m.getRazaAFK())) {
-                    %>
-                    <tr>
-                        <th height="20px" width="100px">
-                            Raza
-                        </th>
-                        <th>
-                            <input class="txt1"  type="text" name="txtRaza" value="<%= r.getNombreRaza()%>" />
-                        </th>
-                    </tr>
+                    <thead>
+                        <%
+                            for (Raza r : dr.readId(m.getTipoAnimalAFK(), m.getRazaAFK())) {
+                        %>
+                        <tr>
+                            <th>Raza</th>
+                            <th class="raza"><input class="txt1"  type="text" name="txtRaza" value="<%= r.getNombreRaza()%>" /></th>
+                        </tr>
+                    </thead>
                 </table>
                 <br>
                 <input type="hidden" name="idMascota" value="<%= id%>"/>
                 <input type="hidden" name="idCliente" value=""/>
-                <input class="button" type="submit" value="Actualizar" name="update"/>
+                <input class="actualizar" type="submit" value="Actualizar" name="update"/>
             </div>
             <%}%>
             <%}%>
             <%}%>
         </form>
         <br>
-        <a href="menuVeterinario.jsp">Volver</a>
+        <a class="volver" href="menuVeterinario.jsp">Volver</a>
     </body>
 </html>

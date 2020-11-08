@@ -42,133 +42,100 @@
             $("#fecha").datepicker();
         });
     </script>
-    <body>
-        <style type="text/css">
-            table, th, td {
-                border: 1px solid black;
-            }
-
-            td, th {
-                padding: 10px;
-            }
-            th {
-                text-align: left;
-            }
-        </style>
-
-        <h1>Añadir Cliente</h1><br>
+    <body class="cuerpoRegistrarPaciente">
+        <h1 class="titulo">Añadir Cliente</h1><br>
 
         <form action="crearCliente.do" method="post">
-            <table  style="width: 50%">
-                <tr>
+            <div class="RegDuenio">
 
-                    <th >
-                        Nombre
-                    </th>
-                    <th >
-                        Dirección
-                    </th>
-                    <th >
-                        Rut
-                    </th>
-                    <th >
-                        Gmail
-                    </th>
-                    <th >
-                        Celular
-                    </th>
-                </tr>
-                <tr>
-                    <td><input class="txt1" type="text" name="txtNombre" value="" /> </td>
-                    <td><input class="txt1"  type="text" name="txtDireccion" value="" /> </td>
-                    <td><input class="txt1"  type="text" name="txtRut" value="" /> </td>
-                    <td><input class="txt1"  type="text" name="txtGmail" value="" /> </td>
-                    <td><input class="txt1"  type="text" name="txtCelular" value="" /> </td>
-                </tr>
+                <table>
+                    <tr>
+                        <th >Nombre</th>
+                        <th >Dirección</th>
+                        <th >Rut</th>
+                        <th >Gmail</th>
+                        <th >Celular</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="txtNombre" value="" /> </td>
+                        <td><input type="text" name="txtDireccion" value="" /> </td>
+                        <td><input  type="text" name="txtRut" value="" /> </td>
+                        <td><input type="text" name="txtGmail" value="" /> </td>
+                        <td><input type="text" name="txtCelular" value="" /> </td>
+                    </tr>
 
-            </table>
+                </table>
+            </div>
+            <h1 class="subTitulo">Añadir Mascota</h1><br>
+            <div class="RegMascota"> 
+                <table>
+                    <tr>
+                        <th >Nombre</th>
+                        <th >Fecha</th>
+                        <th >Edad</th>
+                        <th >Peso</th>
+                        <th >Sexo</th>
+                        <th >Animal</th>
+                        <th >Raza</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="txtNombreMascota" value="" /> </td>
+                        <td>
+                            <input id="fecha" type="text" name="txtFecha" value="" /> 
+                        </td>
+                        <td><input type="text" name="txtEdad" value="" /> </td>
+                        <td><input  type="text" name="txtPeso" value="" /> </td>
 
-            <h1>Añadir Mascota</h1><br>
-            <table  style="width: 50%">
-                <tr>
+                        <td><select name="selectSexo">
+                                <option id="cboSexo" name="cboSexo" value="1">Macho</option> 
+                                <option id="cboSexo" name="cboSexo" value="2">Hembra</option>
+                            </select></td>
 
-                    <th >
-                        Nombre
-                    </th>
-                    <th >
-                        Fecha
-                    </th>
-                    <th >
-                        Edad
-                    </th>
-                    <th >
-                        Peso
-                    </th>
-                    <th >
-                        Sexo
-                    </th>
-                    <th >
-                        Animal
-                    </th>
-                    <th >
-                        Raza
-                    </th>
+                    <script>
 
-                </tr>
-                <tr>
-                    <td><input class="txt1" type="text" name="txtNombreMascota" value="" /> </td>
-                    <td>
-                        <input class="txt1" id="fecha" type="text" name="txtFecha" value="" /> 
-                    </td>
-                    <td><input class="txt1"  type="text" name="txtEdad" value="" /> </td>
-                    <td><input class="txt1"  type="text" name="txtPeso" value="" /> </td>
-
-                    <td><select name="selectSexo">
-                            <option id="cboSexo" name="cboSexo" value="1">Macho</option> 
-                            <option id="cboSexo" name="cboSexo" value="2">Hembra</option>
-                        </select></td>
-
-                <script>
-
-                    $(document).ready(function () {
-                        buscar();
-                    });
-
-                    function buscar() {
-                        var idMascota = $("#tipoMascota").val();
-
-                        $.ajax({
-                            type: 'POST',
-                            url: 'http://localhost:8090/MyApp1/buscarRaza.do',
-                            data: {
-                                tipoMascota: idMascota
-                            }
-                        }).done(function (resultadoHtml) {
-                            $("#divMascota").html(resultadoHtml);
+                        $(document).ready(function () {
+                            buscar();
                         });
-                    }
-                </script>
 
-                <td><select id="tipoMascota" name="tipoMascota" onchange="buscar()"> 
-                        <%
-                            DAO_TipoMascota dt = new DAO_TipoMascota();
+                        function buscar() {
+                            var idMascota = $("#tipoMascota").val();
 
-                            for (TipoMascota tm : dt.read()) {
-                                out.print("<option value='" + tm.getId() + "'>" + tm.getTipoMascota() + "</option>");
-                            }
+                            $.ajax({
+                                type: 'POST',
+                                url: 'http://localhost:8090/MyApp1/buscarRaza.do',
+                                data: {
+                                    tipoMascota: idMascota
+                                }
+                            }).done(function (resultadoHtml) {
+                                $("#divMascota").html(resultadoHtml);
+                            });
+                        }
+                    </script>
 
-                        %>
-                    </select></td>
-                <td><div id="divMascota" > <!-- Se va a cargar con ajax -->
-                        <select></select>
-                    </div> </td>
-                </tr>
-            </table>
+                    <td><select id="tipoMascota" name="tipoMascota" onchange="buscar()"> 
+                            <%
+                                DAO_TipoMascota dt = new DAO_TipoMascota();
 
+                                for (TipoMascota tm : dt.read()) {
+                                    out.print("<option value='" + tm.getId() + "'>" + tm.getTipoMascota() + "</option>");
+                                }
 
-            <input class="button" type="submit" value="Registrar" name="entrar"/>
+                            %>
+                        </select></td>
+                    <td><div id="divMascota" > <!-- Se va a cargar con ajax -->
+                            <select></select>
+                        </div> </td>
+                    </tr> 
+                    
+                    <input class="registrar" type="submit" value="Registrar" name="entrar"/>
+                    <a class="volver" href="menuVeterinario.jsp">Volver</a>
+                </table>
+                        
+            </div> 
+
+           
         </form>
-        <a href="menuVeterinario.jsp">Volver</a>
+                        
 
     </div>
 

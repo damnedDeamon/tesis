@@ -7,7 +7,7 @@ html,
     font-weight: 100;
     margin: 0;/*Quitamos el Margin*/
     padding: 0;/*Quitamos el Padding*/
-    background: url(../img/lobo_1.jpg) no-repeat center top; /*URL de la imagen de fondo y centramos la imagen*/
+    background: url(../img/gatitoBlanco.jpg) no-repeat center top; /*URL de la imagen de fondo y centramos la imagen*/
     background-size: cover;/*ajustamos la imagen al fondo*/
     font-family: sans-serif;/*cambiar el estilo de la fuente*/
     height: 100vh;/*tamaño de imagen de lo alto del dispositivo*/
@@ -33,7 +33,7 @@ td {
     padding: 15px;
     background-color: rgba(255,255,255,0.2);
     color: black;
-    color: black; text-shadow: red 0.3em 0.1em 0.2em;
+    color: white; text-shadow: black 0.3em 0.1em 0.2em;
 }
 
 th {
@@ -76,7 +76,7 @@ tbody {
     color: darkblue;
     font-family: "Latin Modern Roman 10";
     font-style: oblique;
-    color: black; text-shadow: red 0.1em 0.1em 0.2em;
+    color: white; text-shadow: black 0.1em 0.1em 0.2em;
 }
 
 .subTitulo{
@@ -86,7 +86,7 @@ tbody {
     color: darkblue;
     font-family: "Latin Modern Roman 10";
     font-style: oblique;
-    color: black; text-shadow: red 0.1em 0.1em 0.2em;
+    color: white; text-shadow: black 0.1em 0.1em 0.2em;
 }
 
 

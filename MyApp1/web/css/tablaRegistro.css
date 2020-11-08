@@ -1,4 +1,10 @@
-body{
+
+html,
+.cuerpoRegistrar{
+    height: 100%;
+}
+
+.cuerpoRegistrar{
     margin: 0;/*Quitamos el Margin*/
     padding: 0;/*Quitamos el Padding*/
     background: url(../img/aguila.jpg) no-repeat center top; /*URL de la imagen de fondo y centramos la imagen*/
@@ -6,4 +12,94 @@ body{
     font-family: sans-serif;/*cambiar el estilo de la fuente*/
     height: 100vh;/*tamaño de imagen de lo alto del dispositivo*/
     
+}
+
+.container {
+    position: absolute;
+    top: 40%;
+    left: 25%;
+    transform: translate(-70%, -50%);
+}
+
+
+table {
+    width: 300px;
+    height: 50px;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    padding: 15px;
+    background-color: rgba(255,255,255,0.2);
+    color: white; text-shadow: black 0.3em 0.1em 0.2em;
+}
+
+th {
+    text-align: left;
+}
+
+
+.nombre{
+    position: absolute;
+    top: 7%;
+    left: 40%;
+}
+
+.gmail{
+    position: absolute;
+    top: 27%;
+    left: 40%;
+}
+
+.rut{
+    position: absolute;
+    top: 47%;
+    left: 40%;
+}
+
+.titulo{
+    top: 10%;
+    left: 15%;
+    position: absolute;
+    color: darkblue;
+    font-family: "Latin Modern Roman 10";
+    font-style: oblique;
+    color: white; text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+.index{
+    border-radius: 8px;
+    color: black;
+    padding: 10px 19px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 2px 1px;
+    transition-duration: 0.4s;
+    cursor: pointer; 
+    background-color: white;
+    border: 2px solid #555555;
+    position: absolute;
+    top: 75%;
+    left: 20%;
+    transform: translate(-10%, -50%);
+}
+
+.registrar{
+    border-radius: 8px;
+    color: black;
+    padding: 10px 19px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 2px 1px;
+    transition-duration: 0.4s;
+    cursor: pointer; 
+    background-color: white;
+    border: 2px solid #555555;
+    position: absolute;
+    top: 75.1%;
+    left: 55%;
+    transform: translate(-10%, -50%);
 }

@@ -7,67 +7,35 @@
         <link rel="stylesheet" href="css/tablaRegistro.css">
         <title>JSP Page</title>
     </head>
-    <body>
-        <div class="tablaRegistro">
-            <h1>Crear cuenta</h1><br>
-            <div id="Entrada">
-                <form name="entrada" action="crearVeterinario.do" method="POST">
-                    <table>
-                        <tr>
-                            <th height="20px" width="100px" class="nombre">
-                                Nombre
-                            </th>
-                            <th>
-                                <input class="txt1" type="text" name="txtNombre" value="" />
-                            </th>
-                        </tr>
-                    </table>
-                    <table>
-                        <tr>
-                            <th height="20px" width="100px">
-                                Gmail
-                            </th>
-                            <th>
-                                <input class="txt1"  type="text" name="txtGmail" value="" />
-                            </th>
-                        </tr>
-                    </table>
-                    <table>
-                        <tr>
-                            <th height="20px" width="100px">
-                                Rut
-                            </th>
-                            <th>
-                                <input class="txt1"  type="text" name="txtRut" value="" />
-                            </th>
-                        </tr>
-                    </table>
-                    <table>
-                        <tr>
-                            <th height="20px" width="70px">
-                            </th>
-                        </tr>
-                    </table> 
-                    <table>
-                        <tr>
-                            <th height="20px" width="70px">
-                            </th>
-                            <th height="20px" width="100px">
-                                <input class="button" type="submit" value="ENTRAR" name="entrar"/> 
-                            </th>
-                        </tr>
-                    </table>
-                    <table>
-                        <tr>
-                            <th height="20px" width="70px">
-                            </th>
-                            <th height="20px" width="100px">
-                                <a href="index.jsp">Volver</a>
-                            </th>
-                        </tr>
-                    </table>
-                </form>
-            </div>
+    <body class="cuerpoRegistrar">
+        <h1 class="titulo">Crear cuenta</h1><br>
+        <div class="container">
+            <form name="entrada" action="crearVeterinario.do" method="POST">
+                <table>
+                    <tr>
+                        <th>Nombre</th>
+                        <th class="nombre"><input class="txt1" type="text" name="txtNombre" value="" /></th>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th>Gmail</th>
+                        <th class="gmail"><input class="txt1"  type="text" name="txtGmail" value="" /></th>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th>Rut</th>
+                        <th class="rut"><input class="txt1"  type="text" name="txtRut" value="" /></th>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th ><input class="registrar" type="submit" value="Registrar" name="entrar"/></th>
+                    </tr>
+                </table>
+                <a class="index" href="index.jsp">Volver</a>
+            </form>
         </div>
     </body>
 </html>

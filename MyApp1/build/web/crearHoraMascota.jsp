@@ -42,61 +42,58 @@
             $("#fecha").datepicker();
         });
     </script>
-    <body>
+    <body class="cuerpoCrearHora">
         <%            String id;
             id = request.getParameter("idMascota");
         %>
 
         <form name="entrada" action="crearHora.do" method="POST">  
-
-            <div id="basIn">
-
-                <h1>Crear Hora</h1><br>
+            <h1 class="titulo">Crear Hora</h1><br>
+            <div class="container">
                 <table>
-                    <tr>
-                        <th height="20px" width="100px">
-                            Fecha
-                        </th>
-                        <th>
-                            <input class="txt1" id="fecha" type="text" name="txtFecha" value="" />
-                            <input type="time"  name="txtHora"/>
-                        </th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th class="fecha1">Fecha</th>
+                            <th class="hora1">hora</th>
+                            <th>
+                                <input class="fecha" id="fecha" type="text" name="txtFecha" value="" />
+                                <input class="hora" type="time"  name="txtHora"/>
+                            </th>
+                        </tr>
+                    </thead>
                 </table>
                 <table>
-                    <tr>
-                        <th height="20px" width="100px">
-                            Resumen
-                        </th>
-                        <th>
-                            <input class="txt1"  type="text" name="txtResumen" value="" />
-                        </th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th class="resumen">Resumen</th>
+                            <th><input class="resumen1"  type="text" name="txtResumen" value="" /></th>
+                        </tr>
+                    </thead>
                 </table>
                 <table>
-                    <tr>
-                        <th height="20px" width="100px">
-                            Tipo de atencion
-                        </th>
-                        <th>
-                            <select name="tipoAtencion">
-                                <%
-                                    DAO_TipoAtencion dt = new DAO_TipoAtencion();
-                                    for (TipoAtencion t : dt.read()) {
-                                %>
-                                <option value="<%=t.getId()%>"><%=t.getNombreAtencion()%></option>
-                                <%}%>
+                    <thead>
+                        <tr>
+                            <th class="tipo">Tipo de atencion</th>
+                            <th class="selec">
+                                <select name="tipoAtencion">
+                                    <%
+                                        DAO_TipoAtencion dt = new DAO_TipoAtencion();
+                                        for (TipoAtencion t : dt.read()) {
+                                    %>
+                                    <option  value="<%=t.getId()%>"><%=t.getNombreAtencion()%></option>
+                                    <%}%>
 
-                            </select>
-                        </th>
-                    </tr>
+                                </select>
+                            </th>
+                        </tr>
+                    </thead>
                 </table>
                 <input type="hidden" name="idVete" value="<%=v.getId()%>"/>
                 <input type="hidden" name="idMascota" value="<%=id%>"/>
-                <input class="button" type="submit" value="Crear"/>
+                <input class="crear" type="submit" value="Crear"/>
             </div>
         </form>
         <br>
-        <a href="menuVeterinario.jsp">Volver</a>
+        <a class="volver" href="menuVeterinario.jsp">Volver</a>
     </body>
 </html>
