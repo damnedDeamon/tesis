@@ -109,6 +109,23 @@ public class DAO_Cliente extends Conexion implements DAO<Cliente>{
         return lista;
     }
     
+    
+    public List<Cliente> buscarUsuario(String rut) throws SQLException {
+        List<Cliente> lista = new ArrayList<>();
+        
+        rs = ejecutar("select c.id from cliente c where c.clave = '"+rut+"';");
+        Cliente c;
+        while(rs.next()){
+            c = new Cliente();
+            
+            c.setRut(rs.getString(1));
+            
+            lista.add(c);
+        }
+        
+        return lista;
+    }
+    
     public List<Cliente> buscarId(int id) throws SQLException {
         List<Cliente> lista = new ArrayList<>();
         

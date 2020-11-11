@@ -17,14 +17,13 @@ const getRemainTime = deadline => {
     };
 };
 
-        
 const countDown = (deadline, elem) =>{
-  const el = document.getElementById(elem);
+  const elemento = document.getElementById(elem);
   
   const timerUpdate = setInterval(() =>{
  
   let t = getRemainTime(deadline);
-  el.innerHTML = `${t.remainDays}d:${t.remainHours}h:${t.remainMinutes}m:${t.remainSeconds}s`;
+  elemento.innerHTML = `${t.remainDays}d:${t.remainHours}h:${t.remainMinutes}m:${t.remainSeconds}s`;
   
   if(t.remainTime <= 1 && t.remainTime > -1){
      clearInterval(timerUpdate);
@@ -32,5 +31,5 @@ const countDown = (deadline, elem) =>{
   }
   }, 1000);
 };
-               
-countDown(fechaComplet, 'clock');
+        
+countDown(fechaComplet, 'tiempo');

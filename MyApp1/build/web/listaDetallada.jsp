@@ -16,12 +16,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/fecha.css">
         <link rel="stylesheet" href="css/detalleMascota.css">
 
-        <script src="js/jquery-3.3.1.min.js"></script>
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minium-scale=1.0">
 
+        <script src="js/jquery-3.3.1.min.js"></script>
 
         <title>JSP Page</title>
     </head>
@@ -91,7 +89,6 @@
                             minutoActual = calendario.get(Calendar.MINUTE);
 
                             String fecha1 = a.getFechaHora();
-
                             // Fecha de la hora pedida.
                             int anio1 = 17;
                             int anio = Math.max(0, fecha.length() - anio1);
@@ -119,7 +116,7 @@
                             String diaCompleto = "";
                             String horaCompleta = "";
                             String minutoCompleto = "";
-                            int otroDia = diaCita--;
+                            int otroDia = diaCita;
 
                             if (otroDia < 10) {
                                 diaCompleto = String.valueOf(otroDia);
@@ -192,28 +189,41 @@
                 <script>
                     var fechaComplet = "<%=fechaCompleta%>";
                 </script>
-                <div id="clock"></div>
-                <script src="js/cuentaRegresiva_1.js" ></script>
+                <script src="js/cuentaRegresiva.js" ></script>
+                <style>
+                    .dosDias {
+                        color: yellowgreen
+                    }
+
+                    .unDia {
+                        color:magenta;
+                    }
+
+                    .actual {
+                        color:tomato;
+                    }
+                </style>
+                <div id="tiempo"> tiempo restante</div>
+
                 <%
 
                     int unDiaDespues = diaActual + 1;
                     int dosDiasDespues = diaActual + 2;
 
-                    if (anioActual == anioCita && mesActual == mesCita && diaCita == unDiaDespues) {
-                        System.out.println(unDiaDespues);
-                %>
-                <td class="unDia"><%=fecha.subSequence(0, m).toString()%></td>
-                <%
-                    }
                     if (anioActual == anioCita && mesActual == mesCita && diaCita == dosDiasDespues) {
-                        System.out.println(dosDiasDespues);
                 %>
                 <td class="dosDias"><%=fecha.subSequence(0, m).toString()%></td>
                 <%
                     }
+                    if (anioActual == anioCita && mesActual == mesCita && diaCita == unDiaDespues) {
+                %>
+                <td class="unDia"><%=fecha.subSequence(0, m).toString()%></td>
+                <%
+                        System.out.println(fecha.subSequence(0, m).toString());
+                    }
                     if (anioActual == anioCita && mesActual == mesCita && diaCita == diaActual) {
                 %>
-                <td class="atrasado"><%=fecha.subSequence(0, m).toString()%></td>
+                <td class="actual"><%=fechaCompleta.subSequence(0, m).toString()%></td>
 
                 <%
                     DAO_Cliente dc = new DAO_Cliente();
@@ -238,45 +248,45 @@
                         });
                     }
                     ;
-                        </script>
+                </script>
 
-                        <input type="hidden" id="cor" value="<%= correo%>"/>
-                        <input type="hidden" id="hora" value="<%= horaCita%>"/>
-                        <input type="hidden" id="minuto" value="<%= minutoCita%>"/>
+                <input type="hidden" id="cor" value="<%= correo%>"/>
+                <input type="hidden" id="hora" value="<%= horaCita%>"/>
+                <input type="hidden" id="minuto" value="<%= minutoCita%>"/>
 
-                        <% } %>
-                        <%
-                            }
-                            if (diaCita != dosDiasDespues && diaCita != unDiaDespues && diaCita != diaActual) {
-                        %>
-                        <td><%=fecha.subSequence(0, m).toString()%></td>
-                        <%
-                            }
-
-
-                        %>
+                <% } %>
+                <%
+                    }
+                    if (diaCita != dosDiasDespues && diaCita != unDiaDespues && diaCita != diaActual) {
+                %>
+                <td><%=fecha.subSequence(0, m).toString()%></td>
+                <%
+                    }
 
 
-                        <td>
-                            <form action="actualizarHora.jsp" method="post">
-                                <input type="hidden" name="idAtencion" value="<%=a.getId()%>"/>
-                                <input class="button button5" type="submit" value="modificar" name="btnFechaAtencion">
-                            </form>
-                        </td>
-                        <td>
-                            <form action="#" method="post">
-                                <input type="hidden" name="idAtencion" value="<%=a.getId()%>"/>
-                                <input class="button button5" type="submit" value="?" name="btnFechaAtencion" >
-                            </form>
-                        </td>
-                    </tr>
-                    <%}%>
+                %>
+
+
+                <td>
+                    <form action="actualizarHora.jsp" method="post">
+                        <input type="hidden" name="idAtencion" value="<%=a.getId()%>"/>
+                        <input class="button button5" type="submit" value="modificar" name="btnFechaAtencion">
+                    </form>
+                </td>
+                <td>
+                    <form action="#" method="post">
+                        <input type="hidden" name="idAtencion" value="<%=a.getId()%>"/>
+                        <input class="button button5" type="submit" value="?" name="btnFechaAtencion" >
+                    </form>
+                </td>
+                </tr>
+                <%}%>
                 </tbody>
             </table>
         </div>
-        
+
         <br>
-        
+
         <a class="volver" href="menuVeterinario.jsp">volver</a><br><br>
 
 

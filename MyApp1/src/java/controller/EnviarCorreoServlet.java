@@ -40,6 +40,7 @@ public class EnviarCorreoServlet extends HttpServlet {
             String de = "PetsTender2020@gmail.com";
             String clave = "mismascotas2020";
             String para = correoCliente;
+            System.out.println(correoCliente+"asssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss");
             String asunto = "Recordatorio Hora Veterinario";           
             String mensaje = "Recuerde que tiene hora al veterinario mañana a las "+hora+":"+minuto+".";
             

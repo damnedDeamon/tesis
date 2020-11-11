@@ -203,12 +203,11 @@ insert into raza values(null,'Van Turco',2);
 
 -- Mascota --
 insert into mascota values(null,'Odie','2019-05-01','1','16.9',1,'1','1','1'); -- 1 = Macho 2 = Hembra
-insert into mascota values(null,'Thanos','2019-05-01','1','25.1',1,'1','1','1');
-insert into mascota values(null,'cachupin','2019-05-01','1','25.1',1,'1','1','1');
 -- Mascota --
 
 -- Tipo atencion --
 insert into tipo_atencion values(null,'Cardiología veterinaria');
+insert into tipo_atencion values(null,'Peluqueria');
 -- Tipo atencion --
 
 
@@ -296,3 +295,6 @@ select c.gmail from cliente c
 inner join mascota m
 on c.id = m.cliente_fk
 where m.id = 2; 
+
+select c.id from cliente c where c.clave = '111111-1';
+select c.id from cliente c where c.clave = '22-2';
