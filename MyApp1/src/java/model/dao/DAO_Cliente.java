@@ -110,15 +110,15 @@ public class DAO_Cliente extends Conexion implements DAO<Cliente>{
     }
     
     
-    public List<Cliente> buscarUsuario(String rut) throws SQLException {
-        List<Cliente> lista = new ArrayList<>();
+    public List<ClienteAndMascota> buscarUsuario(String clave) throws SQLException {
+        List<ClienteAndMascota> lista = new ArrayList<>();
         
-        rs = ejecutar("select c.id from cliente c where c.clave = '"+rut+"';");
-        Cliente c;
+        rs = ejecutar("select * from cliente where clave = '"+clave+"';");
+        ClienteAndMascota c;
         while(rs.next()){
-            c = new Cliente();
+            c = new ClienteAndMascota();
             
-            c.setRut(rs.getString(1));
+            c.setId(rs.getInt(1));
             
             lista.add(c);
         }

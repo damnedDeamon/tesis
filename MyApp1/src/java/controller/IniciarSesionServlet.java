@@ -42,6 +42,7 @@ public class IniciarSesionServlet extends HttpServlet {
         try {
             Veterinario v = new DAO_Veterinario().getVeterinario(request.getParameter("rut"));
             Cliente c = new DAO_Cliente().getCliente(request.getParameter("rut"));
+            
             if(v == null){
                 if(c == null){
                     response.sendRedirect("error.jsp");

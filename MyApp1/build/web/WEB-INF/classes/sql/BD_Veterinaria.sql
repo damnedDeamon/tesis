@@ -298,3 +298,6 @@ where m.id = 2;
 
 select c.id from cliente c where c.clave = '111111-1';
 select c.id from cliente c where c.clave = '22-2';
+
+
+select * from cliente where clave = '2345';

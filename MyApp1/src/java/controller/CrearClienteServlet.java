@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Cliente;
+import model.ClienteAndMascota;
 import model.Mascota;
 import model.dao.DAO_Cliente;
 import model.dao.DAO_Mascota;
@@ -48,17 +49,22 @@ public class CrearClienteServlet extends HttpServlet {
             c.setGmail(request.getParameter("txtGmail"));
             c.setRut(request.getParameter("txtRut"));
             c.setTelefono(request.getParameter("txtTelefono"));
+            int cantidad = Integer.parseInt(request.getParameter("txtCantidad"));
             
             dc = new DAO_Cliente();
             dc.create(c);
+            request.getSession().setAttribute("cantidadMascota", cantidad);
+            
+            
             String rut = request.getParameter("txtRut");
-            for(Cliente cli: dc.buscarUsuario(rut)){
-                
-                int id = cli.getId();
-                request.setAttribute("id", id);
-                RequestDispatcher rd =  request.getRequestDispatcher("registrarCliente.jsp");
-                rd.forward(request, response);
+            
+            for(ClienteAndMascota cm: dc.buscarUsuario(rut)){
+                int idCliente = cm.getId();
+                request.getSession().setAttribute("idCliente", idCliente);
+               
             }
+            
+            response.sendRedirect("registrarMascota.jsp");
             
             
         } catch (ClassNotFoundException | SQLException ex) {

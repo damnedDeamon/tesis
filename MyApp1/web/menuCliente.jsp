@@ -29,10 +29,6 @@
 
         <h3>Bienvenid@ <%= c.getNombre()%></h3>
         <br>
-
-
-       
-
         <div class="container">
             <table>
                 <thead>

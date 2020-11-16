@@ -42,10 +42,10 @@ public class BuscarRazaServlet extends HttpServlet {
             
             DAO_Raza dr = new DAO_Raza();
             
-            out.println("<select name='txtRaza'>");
+            out.println("<select class='select-css' id='tipoRaza' name='txtRaza'>");
             
             for (Raza r : dr.findBy(idMascota)) {
-                out.println("<option value='"+r.getId()+"'>"+r.getNombreRaza()+"</option>");
+                out.println("<option id='raza' value='"+r.getId()+"'>"+r.getNombreRaza()+"</option>");
             }
             
             out.println("</select>");
